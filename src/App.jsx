@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import './App.css'
 import Reuseable from './Component/Reuseable/Reuseable'
+import Granpa from './Component/Grandpa/Granpa'
 // import UseRef from './Component/UseRef/UseRef'
 // import UseStateFrom from './Component/UseStateFrom/UseStateFrom'
 // import Form from './Component/Form/Form'
@@ -12,9 +13,10 @@ function App() {
 
   }
   const update = e => {
-    console.log('update data',e);
+    console.log('update data', e);
 
   }
+
 
   return (
     <>
@@ -28,10 +30,12 @@ function App() {
         </div>
       </Reuseable>
       <Reuseable submitheandle={update} fromtitle={'update now'} submitText={"Update"}>
-      <div>
+        <div>
           <small>please update profile hear</small>
         </div>
       </Reuseable>
+
+      <Granpa></Granpa>
     </>
   )
 }
