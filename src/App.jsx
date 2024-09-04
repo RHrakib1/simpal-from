@@ -7,12 +7,13 @@ import Reuseable from './Component/Reuseable/Reuseable'
 
 function App() {
   const [count, setCount] = useState(0)
-  const handlesingup = e => {
+  const singup = e => {
+    console.log('sing up data', e);
 
-    e.preventDefault()
   }
-  const handleupdate = e => {
-    e.preventDefault()
+  const update = e => {
+    console.log('update data',e);
+
   }
 
   return (
@@ -21,8 +22,16 @@ function App() {
       {/* <UseStateFrom></UseStateFrom> */}
       {/* <Form></Form> */}
       {/* <UseRef></UseRef> */}
-      <Reuseable fromtitle={'sing up now'} submitText={"Submit"}></Reuseable>
-      <Reuseable fromtitle={'update now'} submitText={"Update"}></Reuseable>
+      <Reuseable submitheandle={singup} fromtitle={'sing up now'} >
+        <div>
+          <small>please sing up hear</small>
+        </div>
+      </Reuseable>
+      <Reuseable submitheandle={update} fromtitle={'update now'} submitText={"Update"}>
+      <div>
+          <small>please update profile hear</small>
+        </div>
+      </Reuseable>
     </>
   )
 }
